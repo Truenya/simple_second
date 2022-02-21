@@ -38,13 +38,13 @@ sDTAppMenu(context) {
                 Navigator.pushNamed(context, '/calendar');
               }
             }
-            if (value == 2) {
-              if (Navigator.canPop(context) && path != '/alarms') {
-                Navigator.popAndPushNamed(context, '/alarms');
-              } else {
-                Navigator.pushNamed(context, '/alarms');
-              }
-            }
+            // if (value == 2) {
+            //   if (Navigator.canPop(context) && path != '/alarms') {
+            //     Navigator.popAndPushNamed(context, '/alarms');
+            //   } else {
+            //     Navigator.pushNamed(context, '/alarms');
+            //   }
+            // }
           },
           icon: const Icon(Icons.menu),
           color: Colors.blue[300],
@@ -54,11 +54,12 @@ sDTAppMenu(context) {
                 const PopupMenuItem(
                   child: Text("Календарь"),
                   value: 1,
-                ),
-                const PopupMenuItem(
-                  child: Text("Будильники"),
-                  value: 2,
                 )
+                // ,
+                // const PopupMenuItem(
+                //   child: Text("Будильники"),
+                //   value: 2,
+                // )
               ]);
   // ,
   //   CloseButton(
