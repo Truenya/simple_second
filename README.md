@@ -1,16 +1,17 @@
-# simple_second
+# Простое время
 
-A new Flutter project.
+Приложение с альтернативным временем.
 
-## Getting Started
+## Вдохновлено статьей
+https://habr.com/ru/post/569410/
 
-This project is a starting point for a Flutter application.
+### Вариант со светлой темой.
+![Screenshot_1645470120](https://user-images.githubusercontent.com/51529891/155013757-7e3aef27-3fa9-4814-9811-7801141f9e95.png)
 
-A few resources to get you started if this is your first Flutter project:
+![Screenshot_1645470125](https://user-images.githubusercontent.com/51529891/155014026-034ce97d-bd42-4fba-b31f-f5d788d5d638.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Вариант с темной темой.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://sun1-84.userapi.com/impg/3pmUecKEeM-2CUGXmq8BIpC2pCgKP9TBnqKDQw/62XdE7vCgOE.jpg?size=997x2160&quality=96&sign=7b826929ca1537db567ff7bf63410561&type=album)
+
+![image](https://sun9-87.userapi.com/impg/p5bn54IZcr-vOtaudq_sGyQdATyBluRKDuJqbQ/dU9WS8Ysnvo.jpg?size=997x2160&quality=96&sign=e067f3048fa9509c4ac814f48a598099&type=album)
