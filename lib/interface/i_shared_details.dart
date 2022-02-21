@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:simple_second/interface/i_alarms_page.dart';
 
