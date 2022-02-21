@@ -73,5 +73,15 @@ class SimpleDate {
     // simpleDay.toString();
   }
 
+  String toStringWithDashes() {
+    return simpleYear.toString() +
+        '-' +
+        simpleMonth.toString() +
+        // '.' +
+        // simpleWeek.toString() +
+        '-' +
+        simpleDay.toString();
+  }
+
   List<int> months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 }

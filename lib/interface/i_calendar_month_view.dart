@@ -29,11 +29,18 @@ class SDMonth extends StatelessWidget {
     SimpleDate sd = SimpleDate.withOffset(DateTime.now(), showedMonth - 10000);
     return MaterialApp(
         theme: ThemeData(
-          primaryColor: Colors.blueAccent,
-          fontFamily: "JetBrainsMono",
-        ),
+            primarySwatch: Colors.blue,
+            brightness: Brightness.light,
+            fontFamily: "JetBrainsMono"),
+        darkTheme: ThemeData(
+            brightness: Brightness.dark, fontFamily: "JetBrainsMonoBold"),
+        themeMode: ThemeMode.system,
         home: Scaffold(
-          appBar: AppBar(title: Text(sd.toStringNoDay()), centerTitle: true),
+          appBar: AppBar(
+            title: Text(sd.toString()),
+            centerTitle: true,
+            leading: sDTAppMenu(context),
+          ),
           body: GridView.builder(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 50,
@@ -48,7 +55,8 @@ class SDMonth extends StatelessWidget {
                   child: Center(child: Text('$index')),
                 );
               }),
-        ));
+        ),
+        debugShowCheckedModeBanner: false);
   }
 
   void changePage(int index) {

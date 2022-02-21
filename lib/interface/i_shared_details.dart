@@ -76,18 +76,6 @@ appBarForPlatforms(context, isSmartphones, key) {
       title: 'Простое время',
       initialRoute: '/',
       routes: commonRoutes(key),
-      // {
-      //   // When navigating to the "/" route, build the FirstScreen widget.
-      //   '/': (context) => const TimePage(title: "Простое время"),
-      //   // When navigating to the "/second" route, build the SecondScreen widget.
-      //   '/calendar': (context) => const CalendarPage(),
-      //   '/alarms': (context) {
-      //     return AlarmPage(key: key);
-      //   },
-      //   '/add_alarm': (context) {
-      //     return DialogAddAlarm(key: key);
-      //   }
-      // },
       theme: ThemeData(
           primarySwatch: Colors.blue,
           brightness: Brightness.light,
@@ -102,13 +90,6 @@ appBarForPlatforms(context, isSmartphones, key) {
     title: 'Простое время',
     initialRoute: '/',
     routes: commonRoutes(key),
-    // {
-    //   // When navigating to the "/" route, build the FirstScreen widget.
-    //   '/': (context) => const TimePage(title: "Простое время"),
-    //   // When navigating to the "/second" route, build the SecondScreen widget.
-    //   '/calendar': (context) => const CalendarPage(),
-    //   '/alarms': (context) => AlarmPage(key: key)
-    // },
     theme: ThemeData(
         primarySwatch: Colors.blue,
         brightness: Brightness.light,

@@ -2,6 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 
+import '../SimpleSecond/alarm_sdt.dart';
 import '../data_storage/sqlite.dart';
 import 'i_add_alarm_dialog.dart';
 import 'i_shared_details.dart';
@@ -63,20 +64,10 @@ class AlarmListState extends State {
   @override
   Widget build(BuildContext context) {
     final ScrollController controller = ScrollController();
-    // var status = database.open();
-    // if ((Platform.isAndroid || Platform.isIOS)) _getStoragePermission();
-    // if (permissionGranted) {
-    // database ??= ObjBox(Directory.current);
     curAlarms = store.alarms();
-
-    // Future<void>.delayed(
-    //     Duration.zero, () => SDMonth.buildComplete(controller, 10000));
-    // List<Alarm> _alarms =
     return ListView.builder(
       controller: controller,
       itemBuilder: (context, index) {
-        // return Text(_alarms.elementAt(index).toString());
-        // SimpleDate sd = SimpleDate(DateTime.now());
         return AlarmRow(
             displayedAlarm: curAlarms!.isEmpty
                 ? Alarm(
@@ -91,13 +82,6 @@ class AlarmListState extends State {
 
       // reverse: true,
     );
-    //   } else {
-    //     return ListView.builder(
-    //         controller: controller,
-    //         itemBuilder: (context, index) {
-    //           return const Text("_alarms.elementAt(index).toString()");
-    //         });
-    //   }
   }
 }
 
