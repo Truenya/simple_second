@@ -44,7 +44,6 @@ class _TimePageState extends State<TimePage> {
         ),
         Text(
           SimpleDate(DateTime.now()).toString(),
-          // style: const TextStyle(fontFamily: "JetBrainsMonoBold"),
         )
       ],
     );
