@@ -1,4 +1,4 @@
-import 'dart:io' show Platform;
+// import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 
@@ -54,7 +54,7 @@ class AlarmList extends StatefulWidget {
 }
 
 class AlarmListState extends State {
-  bool permissionGranted = !(Platform.isAndroid || Platform.isIOS);
+  // bool permissionGranted = !(Platform.isAndroid || Platform.isIOS);
 
   late SqliteStore store;
   AlarmListState() {
