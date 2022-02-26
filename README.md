@@ -18,3 +18,7 @@ https://habr.com/ru/post/569410/
 [<img src=https://user-images.githubusercontent.com/51529891/155015445-a4c6ffd3-0aa7-492b-9a56-7fcc895bcd7d.jpg width="250"/>](https://user-images.githubusercontent.com/51529891/155015445-a4c6ffd3-0aa7-492b-9a56-7fcc895bcd7d.jpg)
 
 [<img src=https://user-images.githubusercontent.com/51529891/155015441-90029b02-c3b7-4948-84e7-754a70c4e731.jpg width="250"/>](https://user-images.githubusercontent.com/51529891/155015441-90029b02-c3b7-4948-84e7-754a70c4e731.jpg)
+
+
+## Монетизация
+Рекламы и подобных вещей не планируется, приложение - идея ради идеи.
