@@ -3,8 +3,7 @@
 #include <flutter_windows.h>
 
 #include "resource.h"
-#include <windows.h>
-#include <windowsx.h>
+
 namespace {
 
 constexpr const wchar_t kWindowClassName[] = L"FLUTTER_RUNNER_WIN32_WINDOW";
@@ -118,7 +117,7 @@ bool Win32Window::CreateAndShow(const std::wstring& title,
   double scale_factor = dpi / 96.0;
 
   HWND window = CreateWindow(
-      window_class, title.c_str(), WS_POPUPWINDOW | WS_VISIBLE,
+      window_class, title.c_str(), WS_OVERLAPPEDWINDOW | WS_VISIBLE,
       Scale(origin.x, scale_factor), Scale(origin.y, scale_factor),
       Scale(size.width, scale_factor), Scale(size.height, scale_factor),
       nullptr, nullptr, GetModuleHandle(nullptr), this);
@@ -149,20 +148,13 @@ LRESULT CALLBACK Win32Window::WndProc(HWND const window,
 
   return DefWindowProc(window, message, wparam, lparam);
 }
-#define HTCAPTION 2
 
-#define HTCLIENT 1
 LRESULT
 Win32Window::MessageHandler(HWND hwnd,
                             UINT const message,
                             WPARAM const wparam,
                             LPARAM const lparam) noexcept {
   switch (message) {
-    case WM_NCHITTEST:
-      return DefWindowProc(window_handle_, message, HTCAPTION, lparam);
-    case WM_LBUTTONDOWN:
-     SendMessage(hwnd,WM_NCLBUTTONDOWN,HTCAPTION,0);
-          break;
     case WM_DESTROY:
       window_handle_ = nullptr;
       Destroy();
@@ -197,6 +189,7 @@ Win32Window::MessageHandler(HWND hwnd,
       }
       return 0;
   }
+
   return DefWindowProc(window_handle_, message, wparam, lparam);
 }
 
