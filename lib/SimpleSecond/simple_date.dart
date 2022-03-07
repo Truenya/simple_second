@@ -12,6 +12,7 @@ class SimpleDate {
     simpleWeek = (dayInYear) ~/ 5;
     simpleDay = dayInYear - simpleMonth * 73 - 1;
   }
+
   int daysUntilYearFromDT(DateTime dt) {
     int days = 0;
     int counter = 1;
@@ -54,6 +55,20 @@ class SimpleDate {
   late int simpleWeek;
   late int simpleMonth;
   late int simpleYear;
+  static const List<int> months = [
+    31,
+    28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31
+  ];
   @override
   String toString() {
     return simpleYear.toString() +
@@ -82,6 +97,4 @@ class SimpleDate {
         '-' +
         simpleDay.toString();
   }
-
-  List<int> months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 }

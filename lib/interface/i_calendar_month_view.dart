@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:simple_second/SimpleSecond/simple_dt.dart';
 import 'package:simple_second/interface/i_shared_details.dart';
+import 'package:simple_second/shared_details.dart';
 
 import '../SimpleSecond/simple_date.dart';
 
@@ -50,9 +52,19 @@ class SDMonth extends StatelessWidget {
                   childAspectRatio: 500),
               itemCount: 73,
               itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  color: colorByIndex(index + getOffset(showedMonth)),
-                  child: Center(child: Text('$index')),
+                DateTime dt = SimpleDateTime.fromSDT(
+                        sd.simpleYear, sd.simpleMonth, index + 1)
+                    .toDT();
+                return Tooltip(
+                  message: dtToString(dt),
+                  child: TextButton(
+                      child: Card(
+                        color: colorByIndex(index + getOffset(showedMonth)),
+                        child: Center(child: Text('$index')),
+                      ),
+                      // Тут будет диалоговое окно с добавлением заметки
+                      onPressed: () {}),
+                  decoration: const BoxDecoration(color: Colors.blue),
                 );
               }),
         ),
