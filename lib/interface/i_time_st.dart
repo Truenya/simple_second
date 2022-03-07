@@ -22,6 +22,12 @@ class _TimePageState extends State<TimePage> {
   double prev = 0;
   late Timer timer;
   @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     timer = Timer.periodic(const Duration(milliseconds: 86), (timer) {
       setState(() {

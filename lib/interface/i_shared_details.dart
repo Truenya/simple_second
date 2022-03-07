@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_second/interface/i_alarms_page.dart';
+import 'package:simple_second/interface/alarms/i_alarms_page.dart';
 
 import 'i_time_st.dart';
 import 'i_calendar_sd.dart';
@@ -54,8 +54,7 @@ sDTAppMenu(context) {
                 const PopupMenuItem(
                   child: Text("Календарь"),
                   value: 1,
-                )
-                // ,
+                ),
                 // const PopupMenuItem(
                 //   child: Text("Будильники"),
                 //   value: 2,
