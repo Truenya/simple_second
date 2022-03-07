@@ -39,7 +39,7 @@ class SDMonth extends StatelessWidget {
         themeMode: ThemeMode.system,
         home: Scaffold(
           appBar: AppBar(
-            title: Text(sd.toString()),
+            title: Text(sd.toStringNoDay()),
             centerTitle: true,
             leading: sDTAppMenu(context),
           ),
@@ -57,13 +57,16 @@ class SDMonth extends StatelessWidget {
                     .toDT();
                 return Tooltip(
                   message: dtToString(dt),
-                  child: TextButton(
-                      child: Card(
-                        color: colorByIndex(index + getOffset(showedMonth)),
-                        child: Center(child: Text('$index')),
-                      ),
-                      // Тут будет диалоговое окно с добавлением заметки
-                      onPressed: () {}),
+                  // child: TextButton(
+                  child: Card(
+                    color: colorByIndex(index + getOffset(showedMonth)),
+                    child: Center(child: Text('$index')),
+                    // shape: const RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.all(Radius.zero)),
+                  ),
+                  // Тут будет диалоговое окно с добавлением заметки
+                  // onPressed: () {},
+                  // ),
                   decoration: const BoxDecoration(color: Colors.blue),
                 );
               }),
