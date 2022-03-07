@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simple_second/interface/alarms/i_alarms_page.dart';
 
-import 'i_time_st.dart';
-import 'i_calendar_sd.dart';
+import 'time/i_time_st.dart';
+import 'calendar/i_calendar_sd.dart';
 
 int getOffset(int month) {
   int offSetByMonth = 0;
