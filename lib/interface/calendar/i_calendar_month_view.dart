@@ -3,7 +3,7 @@ import 'package:simple_second/SimpleSecond/simple_dt.dart';
 import 'package:simple_second/interface/i_shared_details.dart';
 import 'package:simple_second/shared_details.dart';
 
-import '../SimpleSecond/simple_date.dart';
+import '../../SimpleSecond/simple_date.dart';
 
 class SDMonth extends StatelessWidget {
   const SDMonth({Key? key, required this.showedMonth, required this.controller})

@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../SimpleSecond/simple_date.dart';
-import '../SimpleSecond/simple_time.dart';
-import 'i_shared_details.dart';
+import '../../SimpleSecond/simple_date.dart';
+import '../../SimpleSecond/simple_time.dart';
+import '../i_shared_details.dart';
 
 class TimePage extends StatefulWidget {
   const TimePage({Key? key, required this.title}) : super(key: key);
