@@ -3,6 +3,8 @@
 
 ## Contributors welcome!
 Приложение собрано одним человеком на коленке, любое участие категорично приветствуется!)
+https://trello.com/invite/b/luxvVdo8/f09207306eb52f8282d882c1b8362d1c/simplesecond
+План ближайших действий
 
 ## Вдохновлено статьей
 https://habr.com/ru/post/569410/
