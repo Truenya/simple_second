@@ -6,29 +6,36 @@ import 'package:simple_second/shared_details.dart';
 import '../../SimpleSecond/simple_date.dart';
 
 class SDMonth extends StatelessWidget {
-  const SDMonth({Key? key, required this.showedMonth, required this.controller})
+  const SDMonth(
+      {Key? key,
+      required this.showedMonth,
+      required this.controller,
+      required this.cur})
       : super(key: key);
   final int showedMonth;
   final PageController controller;
-
+  final SimpleDate cur;
   static Future<void> buildComplete(controller, initialPage) async {
     controller.jumpToPage(initialPage);
   }
 
-  MaterialColor colorByIndex(int index) {
+  MaterialColor colorByIndex(int day, int offset) {
     SimpleDate sDate = SimpleDate(DateTime.now());
     int curDay = sDate.simpleDay;
     int curMonth = sDate.simpleMonth;
-    if (index == curDay && showedMonth == curMonth + 10000) {
+    if (day == curDay && showedMonth == curMonth + 10000) {
       return Colors.deepPurple;
     }
-    if ((4 - ((index) % 5) == 0)) return Colors.red;
+    if ((4 - ((day + offset) % 5) == 0)) {
+      return Colors.red;
+    }
     return Colors.amber;
   }
 
   @override
   Widget build(BuildContext context) {
-    SimpleDate sd = SimpleDate.withOffset(DateTime.now(), showedMonth - 10000);
+    SimpleDate sd = SimpleDate.withOffset(
+        DateTime.now(), showedMonth - 10000 - cur.simpleMonth);
     return MaterialApp(
         theme: ThemeData(
             primarySwatch: Colors.blue,
@@ -53,13 +60,16 @@ class SDMonth extends StatelessWidget {
               itemCount: 73,
               itemBuilder: (BuildContext context, int index) {
                 DateTime dt = SimpleDateTime.fromSDT(
-                        sd.simpleYear, sd.simpleMonth, index + 1)
+                        sd.simpleYear, sd.simpleMonth, index - 1)
                     .toDT();
                 return Tooltip(
                   message: dtToString(dt),
                   // child: TextButton(
                   child: Card(
-                    color: colorByIndex(index + getOffset(showedMonth)),
+                    color: colorByIndex(
+                        index,
+                        getOffset(showedMonth +
+                            SimpleDate(DateTime.now()).simpleMonth)),
                     child: Center(child: Text('$index')),
                     // shape: const RoundedRectangleBorder(
                     //     borderRadius: BorderRadius.all(Radius.zero)),

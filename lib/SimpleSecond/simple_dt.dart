@@ -36,7 +36,7 @@ class SimpleDateTime {
   DateTime toDT() {
     int realYear = _date.simpleYear + 1;
     int realMonth = 1;
-    late int realDay;
+    int realDay = 0;
     int daysInYear = _date.simpleDay + _date.simpleMonth * 73;
     for (var daysInMonth in SimpleDate.months) {
       if (daysInYear < daysInMonth) {

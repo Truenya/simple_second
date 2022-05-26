@@ -1,16 +1,24 @@
+// Простые даты лучше обычных
+// Ведь в них каждый год недели и месяцы находятся на одних и тех же местах
 class SimpleDate {
   SimpleDate(DateTime dt) {
+    // Для вычисления простой даты воспользуемся текущим днем в году
     int dayInYear = daysUntilYearFromDT(dt);
+    // Тут простым образом находится, является ли день выходным
     int ostatok = dayInYear % 5;
     if (ostatok == 0) {
       holyDay = true;
     } else {
       holyDay = false;
     }
+    // Года начинаются с 0 как и все остальное
     simpleYear = dt.year - 1;
+    dayInYear -= 1;
+    // В году 5 месяцев с 0 по 4
     simpleMonth = dayInYear ~/ 73;
-    simpleWeek = (dayInYear) ~/ 5;
-    simpleDay = dayInYear - simpleMonth * 73 - 1;
+    simpleWeek = dayInYear ~/ 5;
+    // В месяце 73 дня, с 0 по 72
+    simpleDay = dayInYear - simpleMonth * 73;
   }
 
   int daysUntilYearFromDT(DateTime dt) {

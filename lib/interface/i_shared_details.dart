@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:simple_second/SimpleSecond/simple_date.dart';
 import 'package:simple_second/interface/alarms/i_alarms_page.dart';
 
 import 'time/i_time_st.dart';
 import 'calendar/i_calendar_sd.dart';
 
+SimpleDate cur = SimpleDate(DateTime.now());
 int getOffset(int month) {
   int offSetByMonth = 0;
-  int showedMonthInYear = (month - 10000) % 5;
+  int showedMonthInYear = (month - 10000 - cur.simpleMonth) % 5;
   if (showedMonthInYear == 1) {
     offSetByMonth = -2;
   }
@@ -124,5 +126,5 @@ commonRoutes(key) => {
       '/': (context) => const TimePage(title: "Простое время"),
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/calendar': (context) => const CalendarPage(),
-      '/alarms': (context) => const AlarmPage()
+      // '/alarms': (context) => const AlarmPage()
     };
