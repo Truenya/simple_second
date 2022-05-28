@@ -80,6 +80,18 @@ class SDMonth extends StatelessWidget {
                   decoration: const BoxDecoration(color: Colors.blue),
                 );
               }),
+          persistentFooterButtons: [
+            IconButton(
+                onPressed: () => controller.previousPage(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeIn),
+                icon: const Icon(Icons.arrow_back)),
+            IconButton(
+                onPressed: () => controller.nextPage(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeIn),
+                icon: const Icon(Icons.arrow_forward))
+          ],
         ),
         debugShowCheckedModeBanner: false);
   }
