@@ -41,21 +41,11 @@ class SimpleDate {
   }
 
   void _setOffsetByMonth(int monthOffset) {
-    if (monthOffset >= 0) {
-      if (simpleMonth + monthOffset >= 0 && simpleMonth + monthOffset < 5) {
-        simpleMonth = simpleMonth + monthOffset;
-      } else {
-        simpleMonth = simpleMonth + monthOffset % 5;
-        simpleYear = simpleYear + monthOffset ~/ 5;
-      }
-    } else {
-      if (simpleMonth + monthOffset >= 0 && simpleMonth + monthOffset < 5) {
-        simpleMonth = simpleMonth + monthOffset;
-      } else {
-        simpleMonth = simpleMonth + (monthOffset % 5);
-        simpleYear = simpleYear + (monthOffset ~/ 5 - 1);
-      }
-    }
+    int month = simpleMonth + monthOffset;
+    simpleMonth = month % 5;
+    int yearOffset = month ~/ 5;
+    if (month < 0 && simpleMonth != 0) yearOffset -= 1;
+    simpleYear += yearOffset;
   }
 
   late bool holyDay;

@@ -37,7 +37,9 @@ class SimpleDateTime {
     int realYear = _date.simpleYear + 1;
     int realMonth = 1;
     int realDay = 0;
-    int daysInYear = _date.simpleDay + _date.simpleMonth * 73;
+    int daysInYear = _date.simpleDay +
+        _date.simpleMonth * 73 +
+        2; //месяцы с нуля, дни с нуля
     for (var daysInMonth in SimpleDate.months) {
       if (daysInYear < daysInMonth) {
         realDay = daysInYear;
